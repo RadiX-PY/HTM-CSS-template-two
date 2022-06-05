@@ -1,2 +1,2 @@
-# HTM-CSS-template-two
+# HTML-CSS-template-two
 design-template-two
