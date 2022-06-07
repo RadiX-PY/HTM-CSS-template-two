@@ -1,0 +1,132 @@
+/* start global rules */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    -o-scroll-behavior: smooth;
+    -ms-scroll-behavior: smooth;
+    -moz-scroll-behavior: smooth;
+    -webkit-scroll-behavior: smooth;
+    scroll-behavior: smooth;
+}
+/* us font google */
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+ul {
+    list-style: none;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* containers media */
+/* code framwork boostrab */
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* end global rules */
+
+
+/* start design logo */
+/* remove line decoration stop change color */
+header .logo,
+header .logo:visited,
+header .logo:hover,
+header .logo:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+header .logo {
+    --logo-color: #00c7fc;
+    --tr-color: white;
+    display: flex;
+
+}
+
+header .logo .head {
+    margin-top: 10px;
+    position: relative;
+    background-color: var(--logo-color);
+    width: 35px;
+    height: 40px;
+    border-radius: 50px 50px 0 0;
+}
+header .logo .head::after, header .logo .head::before {
+    content: "";
+    background-color: #1a2a3d;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    position: absolute;
+    top:30%;
+    left: 23% 
+}
+header .logo .head::before {
+    left: 57%;
+}
+header .logo .head p {
+    position: absolute;
+    border: 5px solid ;
+    border-color: #ff00 #ff00 var(--tr-color) #ff00;
+    bottom: 0.5px;
+}
+header .logo .head p:nth-child(2){
+    left: 12px;
+}
+header .logo .head p:nth-child(3){
+    left: 24px;
+}
+
+header .logo .logo-title {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+header .logo .logo-title h3 {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 20px;
+    font-family: 'Oleo Script Swash Caps', cursive;
+}
+
+header .logo .logo-title p {
+    color: var(--logo-color);
+    margin-left: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 8px;
+}
+
+/* start design logo */
+
+/* start header */
+header {
+
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* end header */
