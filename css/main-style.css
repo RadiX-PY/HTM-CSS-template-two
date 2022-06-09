@@ -1,6 +1,8 @@
 /* start variables */
 :root {
     --main-color: #19c8fa;
+    --second-color: white;
+    --transparent-color: rgba(15, 116, 143, 0.8);
 }
 /* end variables */
 /* start global rules */
@@ -65,8 +67,8 @@ header .logo:active {
 
 header .logo {
     margin-bottom: 10px;
-    --logo-color: var(--main-color);
-    --tr-color: white;
+    --logo-color: var(--main-color, green);
+    --tr-color: var(--second-color, white);
     display: flex;
 
 }
@@ -86,23 +88,37 @@ header .logo .head::after, header .logo .head::before {
     height: 7px;
     border-radius: 50%;
     position: absolute;
-    top:30%;
-    left: 23% 
+    top: 15px;
+    left: 8px 
 }
 header .logo .head::before {
-    left: 57%;
+    left: 20px;
 }
+
 header .logo .head p {
     position: absolute;
-    border: 5px solid ;
-    border-color: #ff00 #ff00 var(--tr-color) #ff00;
-    bottom: 0px;
+    border: 6px solid;
 }
+header .logo .head p:first-child{
+        border-color: #ff00  #ff00 #ff00 var(--logo-color);
+        bottom: -5px;
+        left: 0;
+    }
+
+header .logo .head p:last-child{
+        border-color: #ff00 var(--logo-color) #ff00 #ff00 ;
+        bottom: -5px;
+        right: 0;
+    }
 header .logo .head p:nth-child(2){
-    left: 12px;
+    border-color: var(--logo-color) #ff00 #ff00 #ff00;
+    bottom: -11px; 
+    left: 6px;
 }
 header .logo .head p:nth-child(3){
-    left: 24px;
+    border-color: var(--logo-color) #ff00 #ff00 #ff00;
+    bottom: -11px;
+    left:18px;
 }
 
 header .logo .logo-title {
@@ -114,6 +130,7 @@ header .logo .logo-title h3 {
     font-weight: 700;
     font-size: 25px;
     font-family: 'Lily Script One', cursive;
+    color: var(--tr-color)
 }
 
 header .logo .logo-title p {
@@ -124,7 +141,6 @@ header .logo .logo-title p {
     font-weight: 700;
     font-size: 8px;
 }
-
 /* start design logo */
 
 /* start header */
@@ -147,7 +163,7 @@ header .container::before {
     position: absolute;
     content: "";
     height: 2px;
-    background-color: #111;
+    background-color: var(--second-color);
     bottom: 0;
     left: 15px;
     width: calc(100% - 30px);
@@ -161,7 +177,7 @@ header nav {
 }
 
 header nav .my-menu {
-    color: #111;
+    color: var(--second-color);
     font-size: 25px;
 }
 
@@ -186,7 +202,7 @@ header nav ul {
     align-items: stretch;
     position: absolute;
     flex-direction: column;
-    background-color: rgba(17, 17, 17, 0.5);
+    background-color: rgba(17, 17, 17, 0.75);
     width: 100%;
     top: calc(100% + 1px);
     left: 0;
@@ -198,13 +214,14 @@ header nav ul {
     /* or */
     header nav ul li a {
     padding: 20px 10px !important;
+    color: var(--second-color) !important;
     }
 }
 
 header nav ul li a {
     padding: 40px 10px;
     display: block;
-    color: #222;
+    color: var(--logo-color);
     font-weight: bold;
     text-decoration: none;
     font-size: 14px;
@@ -224,14 +241,105 @@ header .form {
     width: 60px;
     height: 30px;
     margin-left: 30px;
-    border-left: 2px solid #111
+    border-left: 2px solid var(--second-color)
 }
 header .form i {
-    color: var(--main-color);
+    color: var(--second-color);
     position: absolute;
-    font-size: 30px;
+    font-size: 25px;
     top: 50%;
     left: 50%;
     transform: translate(-30%, -50%)
 }
 /* end header */
+
+/* start landing */
+.landing {
+    min-height: 100vh;
+    background-color: #222;
+    background-image: url(../images/landing.jpg);
+    background-size: cover;
+    position: relative;
+}
+
+.landing .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 17, 17, 0.6);
+}
+
+.landing .text {
+    background-color: var(--transparent-color);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    padding: 50px 20px 50px 100px;
+    color: var(--second-color);
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+@media (max-width:767px) {
+    .landing .text {
+        max-height: 450px;
+        width: 100%;
+        padding: 0;
+    }
+    
+    .landing .text .content {
+        max-width: 100%;
+        padding: 50px 35px 50px 50px;
+    }
+    
+}
+.landing .text .content h2 {
+    font-weight: normal;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+.landing .text .content p {
+    margin-top: 30px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.landing .change-bg {
+    color: var(--second-color);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.landing .change-bg.one {
+    left: 20px;
+}
+.landing .change-bg.two {
+    right: 20px;
+}
+
+.landing .bullets {
+    position: absolute;
+    display: flex;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    
+}
+.landing .bullets li {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid var(--second-color);
+    margin: 0 5px;
+}
+.landing .bullets li.active {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+/* end landing */
