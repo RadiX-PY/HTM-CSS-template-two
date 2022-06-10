@@ -2,7 +2,9 @@
 :root {
     --main-color: #19c8fa;
     --second-color: white;
-    --transparent-color: rgba(15, 116, 143, 0.8);
+    --transparent-color: rgba(15, 116, 143, 0.5);
+    --paragraph-color: #777;
+    --main-padding: 70px;
 }
 /* end variables */
 /* start global rules */
@@ -57,7 +59,7 @@ ul {
 /* start component */
 .special-heading {
     text-align: center;
-    padding: 100px 0;
+    padding: var(--main-padding) 0;
 }
 
 .special-heading > h3 {
@@ -72,12 +74,12 @@ ul {
     max-width: 550px;
     padding-top: 50px;
     margin: 0 auto;
-    color: #777;
+    color: var(--paragraph-color);
     line-height: 1.6;
 }
 
-.special-heading>h3::before,
-.special-heading>h3::after {
+.special-heading > h3::before,
+.special-heading > h3::after {
     position: absolute;
     content: "";
     top: 115%;
@@ -85,13 +87,13 @@ ul {
     transform: translate(-50%, -50%);
 }
 
-.special-heading>h3::before {
+.special-heading > h3::before {
     background-color: #333;
     width: 120px;
     height: 2px;
 }
 
-.special-heading>h3::after {
+.special-heading > h3::after {
     background-color: var(--second-color);
     width: 15px;
     height: 15px;
@@ -351,6 +353,7 @@ header .form i {
     margin-top: 30px;
     font-size: 14px;
     line-height: 1.6;
+    text-overflow: ellipsis;
 }
 
 .landing .change-bg {
@@ -395,6 +398,9 @@ header .form i {
 /* end landing */
 
 /* start services  */
+.services {
+    padding-bottom: var(--main-padding);
+}
 .services .serveces-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
@@ -413,7 +419,7 @@ header .form i {
 }
 
 .services .srv-box .text p {
-    color: #777;
+    color: var(--paragraph-color);
     margin: 50px 0;
     line-height: 1.6;
 }
@@ -427,5 +433,91 @@ header .form i {
         grid-template-columns: 1fr;
     }
 }
-
 /* end services  */
+
+/* start design  */
+section .design {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--main-padding);
+    height: 500px;
+    background-image: url(../images/design-features.jpg);
+    background-size: cover;
+    overflow: hidden;
+}
+
+section .design::before {
+    content: "";
+    position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(17, 17, 17, 0.6);
+}
+
+section .design > * {
+    position: absolute;
+    z-index: 2;
+} 
+
+section .design img {
+    left: 200px;
+    bottom: -80px
+}
+
+section .design .text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 600px;
+    height: 300px;
+    background-color: var(--transparent-color);
+    right: 0;
+}
+
+section .design .text > * {
+    color: var(--second-color);
+    margin-left: 100px;
+}
+
+section .design .text h3 {
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-bottom: 50px;
+}
+
+section .design .text ul li {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+section .design .text ul li::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f109";
+    font-weight: 900;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+@media (max-width: 767px) {
+    section .design .text {
+        width: 100%;
+        align-items: center;
+    }
+    section .design .text > * {
+        margin: 0;
+        font-weight: 100;
+    }
+    section .design .text h3 {
+        font-size: 18px;
+        font-weight: 700;
+    }
+    
+    section .design img {
+        display: none;
+    }
+}
+/* end design  */
