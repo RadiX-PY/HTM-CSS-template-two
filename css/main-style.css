@@ -440,7 +440,6 @@ section .design {
     position: relative;
     display: flex;
     align-items: center;
-    margin-bottom: var(--main-padding);
     height: 500px;
     background-image: url(../images/design-features.jpg);
     background-size: cover;
@@ -521,3 +520,77 @@ section .design .text ul li::before {
     }
 }
 /* end design  */
+
+
+/* start portfolio */
+.portfolio .portfolio-filter{
+    text-align: center;
+    margin-bottom: 50px;
+
+}
+.portfolio .portfolio-filter li {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 10px;
+}
+
+.portfolio .portfolio-filter .active {
+    background-color: var(--main-color);
+    color: var(--second-color);
+}
+
+.portfolio .images-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.portfolio .images-container .box {
+    position: relative;
+    margin: 1px 0;
+    flex-basis: 25%;
+    overflow: hidden;
+}
+
+.portfolio .images-container .box img{
+    max-width: 100%;
+    transition: 0.5s;
+}
+
+@media (max-width: 1199px) {
+    .portfolio .images-container .box {
+            flex-basis: 50%;
+        }
+}
+@media (max-width: 767px) {
+    .portfolio .images-container .box {
+            flex-basis: 100%;
+        }
+}
+
+.portfolio .images-container .box .caption {
+    position: absolute;
+    background-color: rgba(119, 119, 119, 0.8);
+    width: 100%;
+    bottom: -100%;
+    transition: 0.5s;
+}
+
+.portfolio .images-container .box:hover .caption {
+    bottom: 3px;
+}
+
+.portfolio .images-container .box:hover img {
+    transform: rotate(5deg) scale(2.2);
+}
+
+.portfolio .images-container .box .caption > * {
+    margin: 20px 30px;
+    font-weight: normal;
+
+}
+.portfolio .images-container .box .caption > p {
+    color: var(--main-color)
+}
+/* end portfolio */
