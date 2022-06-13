@@ -791,6 +791,7 @@ section .design .text ul li::before {
 
 .testmon-skills .testmonials,
 .testmon-skills .skills {
+    margin: 0 20px;
     margin-bottom: 30px;
 }
 
