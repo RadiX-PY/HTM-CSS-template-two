@@ -2,7 +2,7 @@
 :root {
     --main-color: #19c8fa;
     --second-color: white;
-    --transparent-color: rgba(15, 116, 143, 0.5);
+    --transparent-color: rgba(15, 116, 143, 0.7);
     --paragraph-color: #777;
     --main-padding: 70px;
 }
@@ -228,6 +228,7 @@ header nav .my-menu {
     font-size: 25px;
 }
 
+/* Small */
 @media (min-width: 786px){
     header nav .my-menu {
         display: none;
@@ -239,6 +240,7 @@ header nav ul {
     align-items: center;
 }
 
+/* Small */
 @media (max-width: 786px) {
     header nav ul {
         display: none;
@@ -331,6 +333,7 @@ header .form i {
     transition: 0.5s;
 }
 
+/* Small */
 @media (max-width:767px) {
     .landing .text {
         max-height: 450px;
@@ -424,6 +427,7 @@ header .form i {
     line-height: 1.6;
 }
 
+/* Small */
 @media (max-width: 767px) {
     .services .srv-box {
         flex-direction: column;
@@ -501,6 +505,7 @@ section .design .text ul li::before {
     margin-right: 20px;
 }
 
+/* Small */
 @media (max-width: 767px) {
     section .design .text {
         width: 100%;
@@ -543,7 +548,6 @@ section .design .text ul li::before {
 .portfolio .images-container {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 50px;
 }
 
 .portfolio .images-container .box {
@@ -563,6 +567,8 @@ section .design .text ul li::before {
             flex-basis: 50%;
         }
 }
+
+/* Small */
 @media (max-width: 767px) {
     .portfolio .images-container .box {
             flex-basis: 100%;
@@ -593,4 +599,355 @@ section .design .text ul li::before {
 .portfolio .images-container .box .caption > p {
     color: var(--main-color)
 }
+
+.portfolio .more {
+    display: block;
+    background-color: var(--main-color);
+    color: var(--second-color);
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 10px 0;
+    padding-top: 15px;
+    width: 100px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
 /* end portfolio */
+
+/* start video */
+.video {
+    position: relative;
+    margin-top: var(--main-padding);
+}
+
+.video video {
+    width: 100%;
+}
+
+.video::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 17, 17, 0.6);
+}
+
+.video .caption {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--transparent-color);
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 60%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.video .caption h2 {
+    color: var(--second-color);
+    font-size: 25px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.video .caption p {
+    color: var(--second-color);
+}
+
+.video .caption a {
+    background-color: #111;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--second-color);
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+/* Small */
+@media (max-width: 767px) {
+    .video .caption {
+        height: calc(100% - 25%);
+    }
+
+    .video .caption h2 {
+        font-size: 20px;
+    }
+
+    .video .caption p {
+        font-size: 15px;
+    }
+
+    .video .caption a {
+        padding: 10px 15px;
+        font-size: 15px;
+    }
+}
+/* start video */
+
+/* start about */
+/* start design */
+
+.about .about-design {
+    margin: 300px 0 100px 0;
+}
+.about .about-design .image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: calc(var(--main-padding) + 50px) 0;
+    background-image: url(../images/stats.png);
+    background-size: cover;
+}
+.about .about-design .image::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 17, 17, 0.6);
+}
+
+.about .about-design .image img {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-55%, -130%);
+}
+.about .about-design .image .about-box {
+    z-index: 1;
+    padding: 30px 0;
+    background-color: var(--transparent-color);
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    height: 70%;
+}
+
+.about .about-box .box-info {
+    margin: 30px;
+}
+.about .about-box .box-info > * {
+    margin-bottom: 20px;
+}
+
+.about .about-box .box-info i {
+    background-color: #111;
+    color: var(--second-color);
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+}
+
+.about .about-box .box-info .number {
+    color: var(--second-color);
+    font-weight: 900;
+    font-size: 50px;
+}
+
+.about .about-box .box-info p {
+    color: var(--second-color);
+    font-weight: 600;
+    font-size: 18px;
+}
+
+/* Small */
+@media (max-width: 767px) {
+    .about .about-design {
+            margin: 0;
+            margin-bottom: 100px;
+        }
+    .about .about-design .image .about-box {
+        flex-direction: column;
+    }
+    .about .about-design .image img {
+        display: none;
+    }
+}
+/* end design */
+
+/* start testmonials & skills */
+.about .testmon-skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(470px, 1fr));
+}
+
+.testmonials .monials {
+    text-align: center;
+    margin-bottom: var(--main-padding);
+}
+
+.testmon-skills .testmonials,
+.testmon-skills .skills {
+    margin-bottom: 30px;
+}
+
+
+.testmonials .monials > * {
+    margin: 0 20px;
+    margin-bottom: 50px;
+}
+
+.testmonials .monials h3 {
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.testmonials .monials p {
+    line-height: 2.5;
+    color: #777;
+}
+
+.testmonials .info .box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.testmonials .info .box img {
+    width: 100px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.testmonials .info .box p {
+    margin: 0 50px;
+    padding-bottom: 30px;
+    line-height: 1.6;
+    border-bottom: 1px solid #999;
+}
+
+.testmonials .info .box::after {
+    position: absolute;
+    content: "John Doe, CEO";
+    color: #777;
+    font-size: 14px;
+    right: 60px;
+    bottom: 0px;
+    margin: 20px 0 ;
+}
+
+.testmonials .bullets {
+    text-align: center;
+}
+.testmonials .bullets li {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid #777;
+    margin: 0 5px;
+}
+
+.testmonials .bullets li.active {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+.testmon-skills .skills .info {
+        text-align: center;
+        margin-bottom: var(--main-padding);
+}
+
+.testmon-skills .skills .info > * {
+        margin: 0 20px;
+        margin-bottom: 50px;
+}
+
+.testmon-skills .skills .info h3 {
+        font-weight: normal;
+        text-transform: uppercase;
+        font-size: 20px;
+}
+
+.testmon-skills .skills .info p {
+        line-height: 2.5;
+        color: #777;
+}
+
+.testmon-skills .skills .contianer-skills {
+    margin: 0 20px;
+}
+
+.testmon-skills .skills .contianer-skills p {
+    margin: 20px 0;
+    text-transform: uppercase;
+
+}
+
+.testmon-skills .skills .contianer-skills .bar {
+    position: relative;
+    background-color: #999;
+    width: 100%;
+    height: 30px;
+}
+.testmon-skills .skills .contianer-skills .bar div:first-child {
+    background-color: var(--main-color);
+    width: var(--p);
+    height: 100%;
+    top: 0;
+}
+
+.testmon-skills .skills .contianer-skills .bar div:last-child {
+    position: absolute;
+    background-color: #111;
+    width: 50px;
+    height: 25px;
+    border-radius: 5px;
+    top: -70px;
+    left: calc(var(--p) - 25px);
+}
+.testmon-skills .skills .contianer-skills .bar div:last-child {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.testmon-skills .skills .contianer-skills .bar div:last-child::before {
+    content: attr(p);
+    color: var(--second-color);
+}
+
+.testmon-skills .skills .contianer-skills .bar div:last-child::after {
+    position: absolute;
+    content: "";
+    border: 10px solid;
+    border-color: #111 #ff00 #ff00 #ff00;
+    bottom: -20px;
+
+}
+
+/* Small */
+@media (max-width: 767px) {
+    .about .testmon-skills {
+        grid-template-columns: 100%;
+    }
+    
+    .testmonials .info .box {
+        flex-direction: column;
+    }
+
+    .testmonials .info .box img {
+        margin-bottom: 30px;
+    }
+}
+
+
+/* end testmonials & skills */
+/* end about */
+
