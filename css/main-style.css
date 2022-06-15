@@ -1014,7 +1014,12 @@ section .design .text ul li::before {
 
 }
 
-
+.pricing .price .box {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
 .pricing .price .box div ul li:first-child {
     border-top: 1px solid var(--main-color);
 }
