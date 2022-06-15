@@ -695,8 +695,26 @@ section .design .text ul li::before {
 /* start about */
 /* start design */
 
+.about .mobile-img {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.about .mobile-img img {
+    margin: 0 auto;
+    position: absolute;
+    max-width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-55%, -25%)
+}
+
+
+
 .about .about-design {
-    margin: 300px 0 100px 0;
+    margin: 0 0 100px 0;
 }
 .about .about-design .image {
     position: relative;
@@ -717,13 +735,6 @@ section .design .text ul li::before {
     background-color: rgba(17, 17, 17, 0.6);
 }
 
-.about .about-design .image img {
-    position: absolute;
-    z-index: -1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-55%, -130%);
-}
 .about .about-design .image .about-box {
     z-index: 1;
     padding: 30px 0;
@@ -766,15 +777,16 @@ section .design .text ul li::before {
 
 /* Small */
 @media (max-width: 767px) {
+    .about .mobile-img {
+            display: none;
+    }
+        
     .about .about-design {
             margin: 0;
             margin-bottom: 100px;
-        }
+    }
     .about .about-design .image .about-box {
         flex-direction: column;
-    }
-    .about .about-design .image img {
-        display: none;
     }
 }
 /* end design */
@@ -948,8 +960,150 @@ section .design .text ul li::before {
         margin-bottom: 30px;
     }
 }
-
-
 /* end testmonials & skills */
+/* start design two  */
+.about .quote {
+    color: var(--second-color);
+    text-align: center;
+    position: relative;
+    background-image: url(../images/quote.jpg);
+    background-size: cover;
+    padding: var(--main-padding) 0;
+}
+
+.about .quote::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 17, 17, 0.6);
+}
+
+.about .quote .container {
+    position: relative;
+}
+
+.about .quote q {
+    margin-bottom: 20px;
+    font-size: 30px;
+    line-height: 1.6;
+    display: block;
+}
+
+/* end design two  */
 /* end about */
+
+/* start pricing */
+/* start table price */
+.pricing .price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.pricing .price .box div {
+    background-color: #fcfcfc;
+    text-align: center;
+    text-transform: uppercase;
+    display: inline-block ;
+    margin: 20px 20px;
+
+}
+
+
+.pricing .price .box div ul li:first-child {
+    border-top: 1px solid var(--main-color);
+}
+
+.pricing .price .box div ul li {
+    position: relative;
+    padding: 20px 40px;
+}
+
+.pricing .price .box div ul li:nth-child(n + 2) {
+    text-transform: capitalize;
+}
+
+
+.pricing .price .box div ul li:nth-child(n + 2):not(:last-child)::before {
+    position: absolute;
+    content: "";
+    background-color: var(--main-color);
+    width: 60%;
+    height: 1px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.pricing .price .box div ul li:first-child,
+.pricing .price .box div ul li:last-child {
+    border-bottom: 1px solid var(--main-color);
+}
+
+.pricing .price .box div ul p {
+    font-weight: 700;
+}
+.pricing .price .box div ul div {
+    position: relative;
+    padding: 25px 0;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.pricing .price .box div ul div::before {
+    position: absolute;
+    content: "$";
+    font-size: 25px;
+    font-weight: normal;
+    top: 0;
+    left: -30px;
+
+}
+.pricing .price .box div ul div::after {
+    position: absolute;
+    content: "/mo";
+    font-size: 20px;
+    bottom: 30px;
+    right: -60px;
+}
+.pricing .price .box div button {
+    background-color: #fcfcfc;
+    color: #777;
+    margin: 40px 20px;
+    padding: 15px 20px;
+    border: 1px solid var(--main-color);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.pricing .price .box div button:hover {
+    background-color: var(--main-color);
+    color: #111;
+}
+/* end table price */
+.pricing .contact {
+    width: fit-content;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.pricing .contact p {
+    font-size: 20px;
+    margin-bottom: 50px;
+    font-weight: 400;
+}
+
+.pricing .contact a {
+    text-decoration: none;
+    background-color: var(--main-color);
+    color: var(--second-color);
+    padding: 15px 20px;
+}
+/* end pricing */
 
