@@ -1282,9 +1282,12 @@ section .design .text ul li::before {
     text-transform: uppercase;
     font-weight: normal;
     font-size: 20px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
+.contact .contact-box .my-info h4:first-of-type {
+    margin-top: -80px;
+}
 .contact .contact-box .my-info h4:last-of-type {
     margin-top: 100px;
 }
@@ -1304,6 +1307,10 @@ section .design .text ul li::before {
 
 @media (max-width: 767px) {
 
+    .contact .contact-box .my-info h4:first-of-type {
+        margin-top: 0;
+    }
+    
     .contact .contact-box {
         flex-direction: column-reverse;
         align-items: stretch;
@@ -1323,8 +1330,9 @@ section .design .text ul li::before {
 
 /* start footer */
 footer .image-footer {
+    margin-top: var(--main-padding);
     position: relative;
-    padding: calc(var(--main-padding));
+    padding: var(--main-padding);
     background-image: url(../images/subscribe.jpg);
     background-size: cover;
     display: flex;
