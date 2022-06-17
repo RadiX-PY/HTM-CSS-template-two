@@ -104,15 +104,15 @@ ul {
 
 /* start design logo */
 /* remove line decoration stop change color */
-header .logo,
-header .logo:visited,
-header .logo:hover,
-header .logo:active {
+.logo,
+.logo:visited,
+.logo:hover,
+.logo:active {
     text-decoration: none;
     color: inherit;
 }
 
-header .logo {
+.logo {
     margin-bottom: 10px;
     --logo-color: var(--main-color, green);
     --tr-color: var(--second-color, white);
@@ -120,7 +120,7 @@ header .logo {
 
 }
 
-header .logo .head {
+.logo .head {
     position: relative;
     margin-top: 6px;
     background-color: var(--logo-color);
@@ -128,7 +128,8 @@ header .logo .head {
     height: 40px;
     border-radius: 50px 50px 0 0;
 }
-header .logo .head::after, header .logo .head::before {
+.logo .head::after, 
+.logo .head::before {
     content: "";
     background-color: #1a2a3d;
     width: 7px;
@@ -138,41 +139,41 @@ header .logo .head::after, header .logo .head::before {
     top: 15px;
     left: 8px 
 }
-header .logo .head::before {
+.logo .head::before {
     left: 20px;
 }
 
-header .logo .head p {
+.logo .head p {
     position: absolute;
     border: 6px solid;
 }
-header .logo .head p:first-child{
+.logo .head p:first-child{
         border-color: #ff00  #ff00 #ff00 var(--logo-color);
         bottom: -5px;
         left: 0;
     }
 
-header .logo .head p:last-child{
+.logo .head p:last-child{
         border-color: #ff00 var(--logo-color) #ff00 #ff00 ;
         bottom: -5px;
         right: 0;
     }
-header .logo .head p:nth-child(2){
+.logo .head p:nth-child(2){
     border-color: var(--logo-color) #ff00 #ff00 #ff00;
     bottom: -11px; 
     left: 6px;
 }
-header .logo .head p:nth-child(3){
+.logo .head p:nth-child(3){
     border-color: var(--logo-color) #ff00 #ff00 #ff00;
     bottom: -11px;
     left:18px;
 }
 
-header .logo .logo-title {
+.logo .logo-title {
     margin-top: 15px;
     margin-left: 5px;
 }
-header .logo .logo-title h3 {
+.logo .logo-title h3 {
     text-transform: capitalize;
     font-weight: 700;
     font-size: 25px;
@@ -180,7 +181,7 @@ header .logo .logo-title h3 {
     color: var(--tr-color)
 }
 
-header .logo .logo-title p {
+.logo .logo-title p {
     color: var(--logo-color);
     margin-left: 30px;
     margin-bottom: -5px;
@@ -901,7 +902,6 @@ section .design .text ul li::before {
 .testmon-skills .skills .contianer-skills p {
     margin: 20px 0;
     text-transform: uppercase;
-
 }
 
 .testmon-skills .skills .contianer-skills .bar {
@@ -942,7 +942,7 @@ section .design .text ul li::before {
     content: "";
     border: 10px solid;
     border-color: #111 #ff00 #ff00 #ff00;
-    bottom: -20px;
+    bottom: -19px;
 
 }
 
@@ -971,6 +971,7 @@ section .design .text ul li::before {
     padding: var(--main-padding) 0;
 }
 
+/* filter */
 .about .quote::before {
     position: absolute;
     content: "";
@@ -997,6 +998,10 @@ section .design .text ul li::before {
 
 /* start pricing */
 /* start table price */
+.pricing {
+    padding-bottom: 30px;
+}
+
 .pricing .price {
     display: flex;
     justify-content: center;
@@ -1111,4 +1116,262 @@ section .design .text ul li::before {
     padding: 15px 20px;
 }
 /* end pricing */
+/* start subscribe */
+.subscribe {
+    position: relative;
+    margin-top: var(--main-padding);
+    padding: calc(var(--main-padding) + 30px) 0;
+    background-image: url(../images/subscribe.jpg);
+    background-size: cover;
+    color: var(--second-color);
+} 
 
+/* filter */
+.subscribe::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 17, 17, 0.6);
+}
+
+.subscribe .container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* flex-wrap: wrap; */
+}
+
+.subscribe .container form {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.subscribe .container form input {
+    color: var(--second-color);
+    margin: 0;
+    height: 60px;
+    padding: 20px;
+    border: none;
+}
+.subscribe .container form [type=email] {
+    outline: none;
+    padding-left: 70px;
+    background-color: #ff00;
+    border: 1px solid var(--second-color);
+    border-right: none;
+    width: 400px;
+}
+
+.subscribe .container form input::placeholder {
+    color: var(--second-color);
+    font-size: 20px;
+    letter-spacing: 5px;
+}
+
+.subscribe .container form [type=submit] {
+    background-color: var(--main-color);
+    border: 1px solid var(--second-color);
+    border-left: none;
+    letter-spacing: 2px;
+}
+
+
+.subscribe .container form .my-input {
+    position: absolute;
+    font-size: 30px;
+    left: 10px;
+    top: 30px;
+}
+
+.subscribe .container p {
+    margin-left: 30px;
+    line-height: 1.6;
+}
+
+
+/* Medium */
+@media (max-width: 992px) {
+    .subscribe .container {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .subscribe .container p {
+            margin: 0;
+            margin-top: 30px;
+            text-align: center;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .subscribe .container {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .subscribe .container p {
+        margin: 0;
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .subscribe .container form [type=email] {
+        padding-left: 50px;
+        width: 100%;
+    }
+
+    .subscribe .container form input::placeholder {
+        font-size: 18px
+    }
+
+    .subscribe .container form .my-input {
+        font-size: 22px;
+    }
+}
+
+/* start contact  */ 
+.contact .contact-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact .contact-box .my-input {
+    flex-basis: 65%;
+    margin-left: 10px;
+}
+
+.contact .contact-box .my-info {
+    flex-basis: 25%;
+}
+.contact .contact-box .my-input form > * {
+    outline: none;
+    display: block;
+    margin: 25px 0;
+    width: 100%;
+    padding-left: 20px;
+    border: 1px solid #ccc;
+}
+
+.contact .contact-box .my-input form > input {
+    height: 50px;
+}
+
+.contact .contact-box .my-input form > textarea {
+    height: 300px;
+    padding-top: 10px;
+}
+
+.contact .contact-box .my-input form [type=submit] {
+    padding: 0;
+    width: 200px;
+    background-color: var(--main-color);
+    color: var(--second-color);
+    text-transform: uppercase;
+    margin-left: auto;
+}
+
+.contact .contact-box .my-info h4 {
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 20px;
+    margin-bottom: 60px;
+}
+
+.contact .contact-box .my-info h4:last-of-type {
+    margin-top: 100px;
+}
+
+.contact .contact-box .my-info span {
+    display: block;
+    margin-top: 15px;
+}
+
+.contact .contact-box .my-info address {
+    line-height: 1.9;
+}
+
+.contact .contact-box .my-info *:not(h4) {
+    color: #777;
+}
+
+@media (max-width: 767px) {
+
+    .contact .contact-box {
+        flex-direction: column-reverse;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .contact .contact-box .my-info h4{
+        margin-bottom: 30px;
+    }
+
+    .contact .contact-box .my-info h4:last-of-type {
+    margin-top: 50px;
+    }
+}
+/* end contact  */
+/* end subscribe */
+
+/* start footer */
+footer .image-footer {
+    position: relative;
+    padding: calc(var(--main-padding));
+    background-image: url(../images/subscribe.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 10px solid var(--main-color);
+}
+
+footer .image-footer::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 17, 17, 0.6);
+}
+
+footer .image-footer > * {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+
+footer .image-footer h4 {
+    color: var(--second-color);
+    text-transform: uppercase;
+    font-size: 25px;
+    border-bottom: 2px solid var(--main-color);
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+footer .image-footer .social-icons a > i {
+    margin: 0 10px;
+    font-size: 25px;
+    color: var(--icone-color);
+}
+
+footer .image-footer .copyright {
+    text-align: center;
+    color: var(--second-color);
+    font-size: 20px;
+    font-weight: 500;
+}
+footer .image-footer .copyright span {
+    color: var(--main-color);
+}
+/* end footer */
